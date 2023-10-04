@@ -1,0 +1,97 @@
+:root {
+  --bs-backdrop-zindex: 10;
+  --bs-backdrop-bg: #000;
+  --bs-backdrop-opacity: 0.5;
+  --bs-modal-width: 600px;
+}
+.backdrop {
+  background-color: var(--bs-backdrop-bg);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: var(--bs-backdrop-zindex);
+  opacity: var(--bs-backdrop-opacity);
+  transition: opacity 0.15s linear;
+}
+
+.modal {
+  display: none;
+  height: 100%;
+  left: 0;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: calc(var(--bs-backdrop-zindex) + 1);
+
+  &.show {
+    display: block;
+  }
+  .dialog {
+    max-width: var(--bs-modal-width);
+    transition: transform 0.3s ease-out;
+    margin: $header-height + 20px auto;
+    pointer-events: none;
+    position: relative;
+    width: auto;
+    .content {
+      background-clip: padding-box;
+      background-color: $white;
+      border: 3px solid $theme;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      outline: 0;
+      pointer-events: auto;
+      position: relative;
+      width: 100%;
+
+      .modal_title {
+        align-items: center;
+        border-bottom: 2px solid red;
+        display: flex;
+        flex-shrink: 0;
+        justify-content: space-between;
+        padding: 25px;
+
+        h4 {
+          font-size: 18px;
+          color: $theme;
+          font-weight: 500;
+          line-height: 1.2;
+          margin-bottom: 0.5rem;
+          margin-top: 0;
+        }
+      }
+    }
+
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      z-index: calc(var(--bs-backdrop-zindex) + 2);
+      cursor: pointer;
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: " ";
+        height: 20px;
+        width: 2px;
+        background-color: $color;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

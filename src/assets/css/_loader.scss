@@ -1,0 +1,9 @@
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: $overlay;
+  transition: opacity 0.3s linear;
+}

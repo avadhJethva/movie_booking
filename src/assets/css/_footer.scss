@@ -1,0 +1,15 @@
+footer {
+  border-top: 2px solid $theme;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  .copy-right-sec {
+    padding: 1.8rem;
+    background: $headerbg;
+    text-align: center;
+    a {
+      color: $theme;
+      font-weight: 500;
+    }
+  }
+}

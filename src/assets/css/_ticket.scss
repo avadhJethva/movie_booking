@@ -1,0 +1,92 @@
+// Variables
+$width: 400;
+$circle-size: 50;
+
+.ticket {
+  width: $width + px;
+  background-color: rgb(62 101 218 / 24%);
+  margin: 25px auto;
+  position: relative;
+
+  .poster {
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.holes-top,
+.holes-bottom {
+  height: $circle-size + px;
+  width: $circle-size + px;
+  background-color: $white;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-left: ($circle-size / -2) + px;
+
+  &:before,
+  &:after {
+    content: "";
+    height: $circle-size + px;
+    width: $circle-size + px;
+    background-color: $white;
+    position: absolute;
+    border-radius: 50%;
+  }
+  &:before {
+    left: ($width / -2) + px;
+  }
+  &:after {
+    left: ($width / 2) + px;
+  }
+}
+.holes-top {
+  top: ($circle-size / -2) + px;
+}
+.holes-bottom {
+  bottom: ($circle-size / -2) + px;
+}
+
+.title {
+  padding: 50px 25px 10px;
+}
+
+.cinema {
+  color: gray;
+  font-size: 22px;
+}
+
+.movie-title {
+  font-size: 40px;
+  font-weight: 700;
+}
+.info {
+  padding: 25px;
+}
+table {
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 15px;
+  tr {
+    margin-bottom: 10px;
+  }
+  th {
+    text-align: left;
+    font-weight: 500;
+  }
+
+  td {
+    width: 33%;
+    font-size: 18px;
+  }
+}
+.bigger {
+  font-size: 40px;
+  font-weight: 600;
+}
